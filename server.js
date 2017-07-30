@@ -2,6 +2,8 @@ const express = require('express'); // DOC: http://expressjs.com/
 const hbs = require('hbs');         // DOC: http://handlebarsjs.com/
 const fs = require('fs');           // DOC: https://nodejs.org/api/fs.html
 
+const port = process.env.PORT || 3000;
+
 var _app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -21,8 +23,6 @@ _app.use((req, res, next) => {
 });
 
 _app.use((req, res, next) => {
-
-  
   res.render('maintenance.hbs', {
     pageTitle: '[!] Maintenance [!]',
   });
@@ -57,6 +57,6 @@ _app.get('/bad', (req, res) => {
   });
 });
 
-_app.listen(3000, () => {
-  console.log('Server is up and running on port 3000');
+_app.listen(port, () => {
+  console.log(`Server is up and running on port ${port}`);
 });
