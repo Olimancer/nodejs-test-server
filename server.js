@@ -22,11 +22,11 @@ _app.use((req, res, next) => {
   next();
 });
 
-_app.use((req, res, next) => {
-  res.render('maintenance.hbs', {
-    pageTitle: '[!] Maintenance [!]',
-  });
-});
+// _app.use((req, res, next) => {
+//   res.render('maintenance.hbs', {
+//     pageTitle: '[!] Maintenance [!]',
+//   });
+// });
 
 hbs.registerHelper('getCurrentYear', () => {
   return new Date().getFullYear();
